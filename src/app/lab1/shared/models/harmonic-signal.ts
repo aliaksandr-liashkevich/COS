@@ -1,5 +1,5 @@
 export class HarmonicSignal {
   constructor(
-    public x: number[]
+    public xArray: Array<Array<number>>
   ) { }
 }

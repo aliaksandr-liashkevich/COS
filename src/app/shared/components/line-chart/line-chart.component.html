@@ -1,0 +1,20 @@
+<div *ngIf="result">
+  <ngx-charts-line-chart
+  [view]="view"
+  [results]="result"
+  [scheme]="colorScheme"
+  [results]="multi"
+  [gradient]="gradient"
+  [xAxis]="showXAxis"
+  [yAxis]="showYAxis"
+  [legend]="showLegend"
+  [showXAxisLabel]="showXAxisLabel"
+  [showYAxisLabel]="showYAxisLabel"
+  [xAxisLabel]="xAxisLabel"
+  [yAxisLabel]="yAxisLabel"
+  [yScaleMin]="yScaleMin"
+  [yScaleMax]="yScaleMax"
+  [autoScale]="autoScale"
+  (select)="onSelect($event)">
+</ngx-charts-line-chart>
+</div>
