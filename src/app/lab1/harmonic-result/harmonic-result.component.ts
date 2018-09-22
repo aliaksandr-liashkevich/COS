@@ -57,7 +57,7 @@ export class HarmonicResultComponent implements OnInit {
         result = this.service.generateSignalD(N, inputD);
         break;
       }
-      case this.tasks[4]:{
+      case this.tasks[4]: {
         const inputE = new InputModelE(7, 1, pi / 2);
         result = this.service.generateSignalE(N, inputE);
         break;

@@ -1,16 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
 import { HarmonicResultComponent } from './harmonic-result/harmonic-result.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'lab1',
+    redirectTo: '/',
     pathMatch: 'full'
   },
   {
-    path: 'lab1',
+    path: 'lab2',
     children: [
       {
         path: '',
@@ -29,4 +28,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class Lab1RoutingModule { }
+export class Lab2RoutingModule { }

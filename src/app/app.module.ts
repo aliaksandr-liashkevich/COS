@@ -5,15 +5,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { Lab1Module } from './lab1/lab1.module';
+import { Lab2Module } from './lab2/lab2.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    Lab1Module
+    Lab1Module,
+    Lab2Module
   ],
   providers: [],
   bootstrap: [AppComponent]
