@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HarmonicSignalService } from '../shared/services';
-import { InputModelA, HarmonicSignal, InputModelB, InputModelC, InputModelD } from '../shared/models';
+import { InputModelA, HarmonicSignal, InputModelB, InputModelC, InputModelD, InputModelE } from '../shared/models';
 import { ChartConverterService } from '../../shared/services/chart-converter.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { ChartConverterService } from '../../shared/services/chart-converter.ser
   styleUrls: ['./harmonic-result.component.scss']
 })
 export class HarmonicResultComponent implements OnInit {
-  tasks = [1, 2, 3, 4];
+  tasks = [1, 2, 3, 4, 5];
   taskSelected: any = 1;
 
   resultMulti: Array<Array<any>>;
@@ -57,11 +57,17 @@ export class HarmonicResultComponent implements OnInit {
         result = this.service.generateSignalD(N, inputD);
         break;
       }
+      case this.tasks[4]:{
+        const inputE = new InputModelE(7, 1, pi / 2);
+        result = this.service.generateSignalE(N, inputE);
+        break;
+      }
       default: {
         result = null;
       }
     }
 
+    console.log(result);
     this.resultMulti = new Array<Array<any>>(result.xArray.length);
     for (let i = 0; i < result.xArray.length; i++) {
       this.resultMulti[i] = this.converter.convert(`Model ${i + 1}`, result.xArray[i]);

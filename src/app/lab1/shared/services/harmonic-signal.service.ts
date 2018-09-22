@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HarmonicSignal, HarmonicInputModel, InputModelA, InputModelB, InputModelC, InputModelD } from '../models';
+import { HarmonicSignal, HarmonicInputModel, InputModelA, InputModelB, InputModelC, InputModelD, InputModelE } from '../models';
 
 @Injectable({
   providedIn: 'root'
@@ -82,6 +82,18 @@ export class HarmonicSignalService {
     );
   }
 
+  public generateSignalE(N: number, inputE: InputModelE): HarmonicSignal {
+    const xArray = new Array<Array<number>>(1);
+    xArray[0] = new Array<number>(N);
+    for(let i = 0; i < N; i++) {
+      xArray[0][i] = this._funcHarmonicByE(i, inputE);
+    }
+
+    return new HarmonicSignal(
+      xArray
+    );
+  }
+
   private _funcHarmonicByD(N: number, n: number, fi: number, input: InputModelD): number {
     const length = input.A.length;
     let sum = 0;
@@ -93,7 +105,22 @@ export class HarmonicSignalService {
     return sum;
   }
 
+  private _funcHarmonicByE(N: number, input: InputModelE): number {
+    let sum = 0;
+    for(let i = 0; i < N; i++) {
+      sum += this._funcHarmonic(new HarmonicInputModel(
+        this._linearFunction(input.A, i), this._linearFunction(input.f, i), this._linearFunction(input.fi, i), i, N
+      ));
+    }
+
+    return sum;
+  }
+
   private _funcHarmonic(input: HarmonicInputModel): number {
     return input.A * Math.sin(2 * Math.PI * input.f * input.n / input.N + input.fi);
+  }
+
+  private _linearFunction(x: number, i: number): number {
+    return 0.85 * i + x;
   }
 }
