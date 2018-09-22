@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 
 import { Lab1Module } from './lab1/lab1.module';
 import { Lab2Module } from './lab2/lab2.module';
+import { Lab3Module } from './lab3/lab3.module';
 import { SharedModule } from './shared/shared.module';
 
 @NgModule({
@@ -16,7 +17,8 @@ import { SharedModule } from './shared/shared.module';
     BrowserModule,
     AppRoutingModule,
     Lab1Module,
-    Lab2Module
+    Lab2Module,
+    Lab3Module
   ],
   providers: [],
   bootstrap: [AppComponent]
