@@ -10,7 +10,7 @@ export class LineChartComponent implements OnInit {
 
   @Input()
   result: any[];
-  view: any[] = [1100, 650];
+  view: any[] = [1800, 900];
 
   showXAxis = true;
   showYAxis = true;
@@ -42,6 +42,9 @@ export class LineChartComponent implements OnInit {
 
   public getRandomColors(): string[] {
     return [
+      LineChartComponent.Colors[Math.floor(Math.random() * LineChartComponent.Colors.length)],
+      LineChartComponent.Colors[Math.floor(Math.random() * LineChartComponent.Colors.length)],
+      LineChartComponent.Colors[Math.floor(Math.random() * LineChartComponent.Colors.length)],
       LineChartComponent.Colors[Math.floor(Math.random() * LineChartComponent.Colors.length)]
     ];
   }

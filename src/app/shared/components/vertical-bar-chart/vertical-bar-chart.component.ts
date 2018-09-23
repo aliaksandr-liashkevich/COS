@@ -6,10 +6,12 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./vertical-bar-chart.component.scss']
 })
 export class VerticalBarChartComponent implements OnInit {
+  static Colors = ['royalblue ', 'red', 'seagreen', 'dimgray'];
+
   @Input()
   public result: any[];
 
-  view: any[] = [1300, 650];
+  view: any[] =  [1800, 900];
 
   // options
   showXAxis = true;
@@ -22,7 +24,7 @@ export class VerticalBarChartComponent implements OnInit {
   yAxisLabel = '';
 
   colorScheme = {
-    domain: ['#5AA454']
+    domain: this.getRandomColors()
   };
 
   constructor() { }
@@ -32,6 +34,12 @@ export class VerticalBarChartComponent implements OnInit {
 
   onSelect(event) {
     console.log(event);
+  }
+
+  public getRandomColors(): string[] {
+    return [
+      VerticalBarChartComponent.Colors[Math.floor(Math.random() * VerticalBarChartComponent.Colors.length)],
+    ];
   }
 
 }

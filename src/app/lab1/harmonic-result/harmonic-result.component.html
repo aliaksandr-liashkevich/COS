@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container-fluid">
   <div class="card">
     <div class="card-header">Лабораторная работа 1.</div>
     <select class='select-option' required [(ngModel)]='taskSelected' (ngModelChange)='onTaskSelected()'>
@@ -7,7 +7,7 @@
   </div>
   <br />
 
-  <div *ngFor="let result of resultMulti" class="row">
+  <div *ngFor="let result of resultMulti" class="row justify-content-center">
     <app-line-chart [result]="result"></app-line-chart>
   </div>
 </div>

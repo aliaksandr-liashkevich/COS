@@ -1,6 +1,6 @@
 <div class="container-fluid">
   <div class="card">
-    <div class="card-header">Лабораторная работа 3.</div>
+    <div class="card-header">Лабораторная работа 4.</div>
     <select class='select-option' required [(ngModel)]='taskSelected' (ngModelChange)='onTaskSelected()'>
       <option class='task' *ngFor='let task of tasks' [value]="task">{{task}}</option>
   </select>
@@ -20,8 +20,20 @@
     <br />
   </div>
   <div class="row justify-content-center">
+    <app-line-chart
+      [result]="phaseFunc">
+    </app-line-chart>
+    <br />
+  </div>
+  <div class="row justify-content-center">
     <app-vertical-bar-chart
       [result]="phase[0]">
+    </app-vertical-bar-chart>
+    <br />
+  </div>
+  <div class="row justify-content-center">
+    <app-vertical-bar-chart
+      [result]="phase[1]">
     </app-vertical-bar-chart>
   </div>
 </div>
