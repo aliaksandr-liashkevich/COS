@@ -29,7 +29,7 @@ export class SignalResultComponent implements OnInit {
     let result: Signal;
     if (+this.taskSelected === 1) {
       this.slidingService.init(
-        N, length, 3, new InputModel(10, 1, 0)
+        N, length, 5, new InputModel(10, 1, 0)
       );
       result = this.slidingService.getSignal();
     }
@@ -43,7 +43,7 @@ export class SignalResultComponent implements OnInit {
 
     if (+this.taskSelected === 3) {
       this.medianService.init(
-        N, length, 5, new InputModel(10, 1, 0)
+        N, length, 9, new InputModel(10, 1, 0)
       );
       result = this.medianService.getSignal();
     }
