@@ -4,6 +4,7 @@ import { LineChartComponent } from './components/line-chart/line-chart.component
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ChartConverterService } from './services/chart-converter.service';
+import { VerticalBarChartComponent } from './components/vertical-bar-chart/vertical-bar-chart.component';
 
 @NgModule({
   imports: [
@@ -12,13 +13,15 @@ import { ChartConverterService } from './services/chart-converter.service';
     BrowserAnimationsModule,
   ],
   declarations: [
-    LineChartComponent
+    LineChartComponent,
+    VerticalBarChartComponent,
   ],
   providers: [
     ChartConverterService
   ],
   exports: [
-    LineChartComponent
+    LineChartComponent,
+    VerticalBarChartComponent
   ]
 })
 export class SharedModule { }

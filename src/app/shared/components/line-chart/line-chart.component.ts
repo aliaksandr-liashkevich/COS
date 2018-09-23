@@ -36,6 +36,10 @@ export class LineChartComponent implements OnInit {
   ngOnInit() {
   }
 
+  onSelect(event) {
+    console.log(event);
+  }
+
   public getRandomColors(): string[] {
     return [
       LineChartComponent.Colors[Math.floor(Math.random() * LineChartComponent.Colors.length)]

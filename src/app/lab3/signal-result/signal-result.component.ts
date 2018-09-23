@@ -65,15 +65,11 @@ export class SignalResultComponent implements OnInit {
 
     this.amplitude = new Array<any>(1);
     this.amplitude[0] = {
-      name: 'Amplitude',
+      name: 'Amplitude Spectrum',
       series: this.converter.convertToSingle(result.amplitudeSpectrum, funcXSpectre)
     };
-
     this.phase = new Array<any>(1);
-    this.phase[0] = {
-      name: 'Phase',
-      series: this.converter.convertToSingle(result.phaseSpectrum, funcXSpectre)
-    };
+    this.phase[0] = this.converter.convertToSingle(result.phaseSpectrum, funcXSpectre);
   }
 
   ngOnInit() {
